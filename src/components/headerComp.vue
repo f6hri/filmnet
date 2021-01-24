@@ -1,0 +1,46 @@
+<template>
+	<header class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+		<div class="container">
+		  <a class="navbar-brand" href="/">Film.Net</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+		    <ul class="navbar-nav">
+		      <li class="nav-item">
+		        <router-link class="nav-link" to="/movies">Filmler</router-link>
+		      </li>
+		      <li class="nav-item">
+		        <router-link class="nav-link" to="/tv">Diziler</router-link>
+		      </li>
+		      <li class="nav-item">
+		        <router-link class="nav-link" to="/people">Kişiler</router-link>
+		      </li>
+		    </ul>
+		    <ul class="navbar-nav">
+		      <li class="nav-item">
+		        <a class="nav-link" href="/account/login">Girş Yap</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="/account/register">Film.Net'e Katıl</a>
+		      </li>
+		      <li class="nav-item">
+		        <router-link class="nav-link" to="/search">Ara</router-link>
+		      </li>
+		    </ul>
+		  </div>
+	  	</div>
+	</header>
+</template>
+
+<script>
+	
+	export default{
+		name:'HeaderComp'
+	}
+
+</script>
+
+<style scoped>
+	
+</style>
