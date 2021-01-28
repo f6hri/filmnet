@@ -1,15 +1,16 @@
 <template>
 	<li class="list-group-item" id="data-item">
-	  	<img src="https://picsum.photos/id/250/200/300">
-		<router-link to="/people/gal-godot"><h5 class="font-weight-bold">Gal Godot</h5></router-link>
-		<p>Wonder Woman</p>
+	  	<img :src="'https://www.themoviedb.org/t/p/w235_and_h235_face/'+image">
+		<a :href="'/people/'+id"><h5 class="font-weight-bold">{{name}}</h5></a>
+		<p>{{department}}</p>
 	</li>
 </template>
 
 <script>
 	
 	export default{
-		name:'PeopleListItemComp'
+		name:'PeopleListItemComp',
+		props:['id','name','department','image']
 	}
 
 </script>

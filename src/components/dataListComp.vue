@@ -1,20 +1,34 @@
 <template>
 	<section id="data-list-section">
 		<div id="heading" class="d-flex flex-row justify-content-between">
-			<h3>En Popüler</h3>
-			<div class="input-group" id="selection">
-			  <select class="custom-select" id="inputGroupSelect01">
-			    <option selected>Tümü</option>
-			    <option value="1">Filmler</option>
-			    <option value="2">Diziler</option>
-			  </select>
-			</div>
+			<h3>{{title}}</h3>
 		</div>	
 		<hr>
-		<ul class="list-group list-group-horizontal" id="data-list">
+		<ul class="list-group list-group-horizontal" id="data-list" v-if="type == 'movie' || type == 'tv' || type == 'trend'">
 		  
-		 	<MovieListItemComp />
-		 	<PeopleListItemComp />
+		 	<MovieListItemComp
+		 		v-for="item in data" 
+		 		:key="item.id"
+		 		:id="item.id"
+		 		:poster="item.poster_path"
+		 		:date="item.first_air_date||item.release_date"
+		 		:name="item.name||item.title"
+		 		:rate="item.vote_average"
+		 		:type="item.media_type? item.media_type:type"
+		 	/>
+		
+		</ul>
+		<ul class="list-group list-group-horizontal" id="data-list" v-if="type == 'people'">
+		  
+		 	<PeopleListItemComp
+		 		v-for="item in data" 
+		 		:key="item.id"
+		 		:id="item.id"
+		 		:image="item.profile_path"
+		 		:name="item.name"
+		 		:department="item.known_for_department"
+		 		:type="type"
+		 	/>
 		
 		</ul>
 	</section>	 
@@ -30,7 +44,8 @@
 		components:{
 			MovieListItemComp,
 			PeopleListItemComp
-		}
+		},
+		props:['title','type','data']
 	}
 
 </script>

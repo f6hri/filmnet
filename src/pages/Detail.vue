@@ -4,19 +4,21 @@
 			<div class="row mt-4">
 				<div class="col d-flex flex-row justify-content-center">
 					<div id="poster">
-						<img src="https://picsum.photos/id/227/250/400">
-						<h3 class="mt-2">Ray <span class="text-dark">(2020)</span></h3>
+						<img :src="'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+info.poster_path" width="100%">
+						<h3 class="mt-2">{{info.name || info.title}} <span class="text-dark">({{info.release_date || info.first_air_date || last_air_date}})</span></h3>
 						<div class="progress">
-							<div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">75%</div>
+							<div class="progress-bar bg-success" role="progressbar" :style="'width:'+ info.vote_average*10+'%;'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{info.vote_average*10}}%</div>
 						</div>
 						<div class="d-flex mt-1">
-							<a href="#" class="nav-link"><i class="fas fa-heart"></i></a>
+							<a href="#" class="nav-link text-info">Beğen</a>
+							<a href="#" class="nav-link text-info">Kaydet</a>
+							<a href="#" class="nav-link text-info">Listeye Ekle</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-9 mx-auto">
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+						{{info.overview}}
 					</p>
 					<DataListComp />
 				</div>		
@@ -33,6 +35,14 @@
 		name:'Detail',
 		components:{
 			DataListComp
+		},
+		created(){
+			this.$store.dispatch('getInfo',{type:this.$route.params.type,id:this.$route.params.id})
+		},
+		computed:{
+			info(){
+				return this.$store.getters.returnInfo
+			}
 		}
 	}
 

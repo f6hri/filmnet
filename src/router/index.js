@@ -49,15 +49,7 @@ const routes = [
         component:Search
       },
       {
-        path:'movies/:movieID',
-        component:Detail
-      },
-      {
-        path:'tv/:tvID',
-        component:Detail
-      },
-      {
-        path:'people/:peopleID',
+        path:':type/:id',
         component:Detail
       },
       {
