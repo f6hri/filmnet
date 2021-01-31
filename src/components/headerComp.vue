@@ -7,25 +7,10 @@
 		  </button>
 		  <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
 		    <ul class="navbar-nav">
-		      <li class="nav-item">
-		        <router-link class="nav-link" to="/movies">Filmler</router-link>
-		      </li>
-		      <li class="nav-item">
-		        <router-link class="nav-link" to="/tv">Diziler</router-link>
-		      </li>
-		      <li class="nav-item">
-		        <router-link class="nav-link" to="/people">Kişiler</router-link>
-		      </li>
 		    </ul>
 		    <ul class="navbar-nav">
 		      <li class="nav-item">
-		        <a class="nav-link" href="/account/login">Girş Yap</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="/account/register">Film.Net'e Katıl</a>
-		      </li>
-		      <li class="nav-item">
-		        <router-link class="nav-link" to="/search">Ara</router-link>
+		        <router-link class="nav-link" to="/search">Search</router-link>
 		      </li>
 		    </ul>
 		  </div>

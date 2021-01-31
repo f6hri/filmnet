@@ -1,6 +1,6 @@
 <template>
 	<li class="list-group-item" id="data-item">
-	  	<img :src="'https://www.themoviedb.org/t/p/w220_and_h330_face/'+poster">
+	  	<img :src="poster?'https://www.themoviedb.org/t/p/w220_and_h330_face/'+poster:not_image">
 		<a :href="'/'+type+'/'+id"><h5 class="font-weight-bold">{{name}}</h5></a>
 		<div class="progress">
 			<div :class="'progress-bar bg-danger'" role="progressbar" :style="'width:'+rate*10+'%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{rate*10}}%</div>
@@ -13,7 +13,12 @@
 	
 	export default{
 		name:'MovieListItemComp',
-		props:["id","poster","date","rate","name","type"]
+		props:["id","poster","date","rate","name","type"],
+		data(){
+			return{
+				not_image:'https://redi.eu/wp-content/uploads/2015/08/not-available.png'
+			}
+		}
 	}
 
 </script>

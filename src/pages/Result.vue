@@ -8,7 +8,7 @@
 				</div>
 				<div class="col-9">
 					<div id="result" class="d-flex flex-row justify-content-center flex-wrap">
-						<MovieCardComp />
+						<CardComp />
 					</div>
 				</div>	
 			</div>
@@ -19,13 +19,13 @@
 <script>
 	
 	import ResultSettingComp from '../components/resultSettingComp.vue'
-	import MovieCardComp from '../components/movieCardComp.vue'
+	import CardComp from '../components/cardComp.vue'
 
 	export default{
 		name:'Result',
 		components:{
 			ResultSettingComp,
-			MovieCardComp
+			CardComp
 		}
 	}
 

@@ -1,11 +1,11 @@
 <template>
 	<main id="home">
 		<div class="container">
-			<SliderComp />
-			<DataListComp title="Trend" type="trend" :data="trend" />
-			<DataListComp title="Popüler Filmler" type="movie" :data="films" />
-			<DataListComp title="Popüler Diziler" type="tv" :data="TV" />
-			<DataListComp title="Popüler Oyuncular" type="people" :data="people" />
+			<SliderComp :data="trend" />
+			<DataListComp title="Trend" :type="'watch'" :data="trend" />
+			<DataListComp title="Popüler Filmler" :type="'watch'" :data="films" />
+			<DataListComp title="Popüler Diziler" :type="'watch'" :data="TV" />
+			<DataListComp title="Popüler Oyuncular" :type="'person'" :data="people" />
 		</div>
 	</main>
 </template>
@@ -34,16 +34,16 @@
 		},
 		computed:{
 			trend(){
-				return this.$store.getters.returnTrend[0]
+				return this.$store.getters.returnTrend
 			},
 			films(){
-				return this.$store.getters.returnFilms[0]
+				return this.$store.getters.returnFilms
 			},
 			TV(){
-				return this.$store.getters.returnTVs[0]
+				return this.$store.getters.returnTVs
 			},
 			people(){
-				return this.$store.getters.returnPeople[0]
+				return this.$store.getters.returnPeople
 			},
 		}
 	}

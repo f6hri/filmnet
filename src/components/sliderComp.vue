@@ -8,13 +8,22 @@
 		  </ol>
 		  <div class="carousel-inner">
 		    <div class="carousel-item active">
-		      <img src="https://picsum.photos/id/237/1280/600" class="d-block w-100" alt="img_1">
+		      <img :src="'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/'+data[0].path" class="d-block w-100" alt="img_1">
+		      <div class="carousel-caption d-none d-md-block">
+			    <h5>{{data[0].name}}</h5>
+			  </div>
 		    </div>
 		    <div class="carousel-item">
-		      <img src="https://picsum.photos/id/238/1280/600" class="d-block w-100" alt="img_2">
+		      <img :src="'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/'+data[1].path" class="d-block w-100" alt="img_2">
+		      <div class="carousel-caption d-none d-md-block">
+			    <h5>{{data[1].name}}</h5>
+			  </div>
 		    </div>
 		    <div class="carousel-item">
-		      <img src="https://picsum.photos/id/239/1280/600" class="d-block w-100" alt="img_3">
+		      <img :src="'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/'+data[2].path" class="d-block w-100" alt="img_3">
+		      <div class="carousel-caption d-none d-md-block">
+			    <h5>{{data[2].name}}</h5>
+			  </div>
 		    </div>
 		  </div>
 		  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -32,7 +41,8 @@
 <script>
 	
 	export default{
-		name:'SliderComp'
+		name:'SliderComp',
+		props:['data']
 	}
 
 </script>

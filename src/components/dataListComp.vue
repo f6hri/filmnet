@@ -3,30 +3,29 @@
 		<div id="heading" class="d-flex flex-row justify-content-between">
 			<h3>{{title}}</h3>
 		</div>	
-		<hr>
-		<ul class="list-group list-group-horizontal" id="data-list" v-if="type == 'movie' || type == 'tv' || type == 'trend'">
+		<ul class="list-group list-group-horizontal" id="data-list" v-if="type == 'watch'">
 		  
 		 	<MovieListItemComp
 		 		v-for="item in data" 
 		 		:key="item.id"
 		 		:id="item.id"
-		 		:poster="item.poster_path"
-		 		:date="item.first_air_date||item.release_date"
-		 		:name="item.name||item.title"
-		 		:rate="item.vote_average"
-		 		:type="item.media_type? item.media_type:type"
+		 		:poster="item.poster"
+		 		:date="item.date"
+		 		:name="item.name"
+		 		:rate="item.rate"
+		 		:type="item.type"
 		 	/>
 		
 		</ul>
-		<ul class="list-group list-group-horizontal" id="data-list" v-if="type == 'people'">
+		<ul class="list-group list-group-horizontal" id="data-list" v-if="type == 'person'">
 		  
 		 	<PeopleListItemComp
 		 		v-for="item in data" 
 		 		:key="item.id"
 		 		:id="item.id"
-		 		:image="item.profile_path"
+		 		:image="item.image"
 		 		:name="item.name"
-		 		:department="item.known_for_department"
+		 		:job="item.job||item.character||item.roles"
 		 		:type="type"
 		 	/>
 		
@@ -45,7 +44,7 @@
 			MovieListItemComp,
 			PeopleListItemComp
 		},
-		props:['title','type','data']
+		props:['title','type','data'],
 	}
 
 </script>
