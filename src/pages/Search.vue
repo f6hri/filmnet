@@ -1,12 +1,11 @@
 <template>
 	<main id="search">
 		<div class="container">
-			
-			<h2 class="text-center mt-2">Arama Yap</h2>
+	
 			<div class="input-group mt-4 w-75 mx-auto">
-			  <input type="text" class="form-control" v-model="searchText" placeholder="Ne aramıştınız?" aria-label="Recipient's username" aria-describedby="basic-addon2">
+			  <input type="text" class="form-control" v-model="searchText" placeholder="Search here..." aria-label="Recipient's username" aria-describedby="basic-addon2">
 			  <div class="input-group-append">
-			    <button class="btn btn-outline-info" v-on:click="search()" type="button">Ara</button>
+			    <button class="btn btn-outline-info" v-on:click="search()" type="button">Search</button>
 			  </div>
 			</div>
 
